@@ -1,0 +1,159 @@
+.controls-section .section-heading {
+  margin-top: 35px;
+}
+
+.control-hint {
+  margin: 0 0 2px;
+  color: #72838c;
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 108px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 19px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 12px;
+  background: rgba(23, 35, 44, 0.78);
+}
+
+.control-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-emblem {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+}
+
+.control-emblem .brand-mark {
+  width: 27px;
+  height: 27px;
+}
+
+.control-copy strong {
+  color: #e2e5e3;
+  font: 9px var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.control-copy p {
+  margin: 5px 0 0;
+  color: #8d9ba1;
+  font-size: 11px;
+}
+
+.button-group {
+  display: flex;
+  gap: 9px;
+}
+
+.control-button {
+  display: inline-flex;
+  min-width: 104px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #f2f3ef;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.control-button:hover:not(:disabled) {
+  filter: brightness(1.13);
+  transform: translateY(-1px);
+}
+
+.control-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.control-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.control-forward {
+  border-color: rgba(99, 203, 137, 0.2);
+  background: rgba(50, 130, 81, 0.3);
+  color: #a4e0b7;
+}
+
+.control-stop {
+  border-color: rgba(255, 116, 104, 0.22);
+  background: rgba(159, 57, 53, 0.34);
+  color: #ffaaa1;
+}
+
+.control-backward {
+  border-color: rgba(244, 187, 69, 0.2);
+  background: rgba(154, 104, 32, 0.29);
+  color: #f3cb7c;
+}
+
+.command-message {
+  flex-basis: 100%;
+  margin: -10px 0 0 54px;
+  color: #a4e0b7;
+  font-size: 11px;
+}
+
+.command-message--error {
+  color: #ffaaa1;
+}
+
+@media (max-width: 760px) {
+  .controls-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .control-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-section .section-heading {
+    margin-top: 28px;
+  }
+
+  .controls-panel {
+    gap: 17px;
+    padding: 16px 13px;
+  }
+
+  .control-copy p {
+    font-size: 10px;
+  }
+
+  .button-group {
+    gap: 6px;
+  }
+
+  .control-button {
+    min-width: 0;
+    gap: 4px;
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+}

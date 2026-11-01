@@ -1,0 +1,153 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon,
+.control-emblem {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(244, 187, 69, 0.38);
+  border-radius: 12px;
+  background: rgba(244, 187, 69, 0.08);
+  color: var(--yellow);
+}
+
+.brand-icon {
+  overflow: hidden;
+  padding: 2px;
+  border-color: rgba(244, 187, 69, 0.28);
+  background: #15232c;
+}
+
+.brand-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brand-eyebrow,
+.footer {
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.brand-eyebrow {
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.brand h1 {
+  margin: 0;
+  font: 600 26px/1 var(--display);
+  letter-spacing: -0.06em;
+}
+
+.brand h1 span {
+  color: var(--yellow);
+}
+
+.connection {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  color: #a0adb3;
+  font: 10px var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.connection-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7c8790;
+  box-shadow: 0 0 0 3px rgba(124, 135, 144, 0.12);
+}
+
+.connection.is-connected .connection-dot {
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(99, 203, 137, 0.12);
+}
+
+.connection.is-connected {
+  color: #a9cdb5;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36px;
+  padding: 17px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #62727b;
+  font-size: 8px;
+}
+
+.footer b {
+  padding: 0 4px;
+  color: var(--yellow);
+}
+
+.footer-track {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 74px;
+  height: 1px;
+  background: var(--yellow);
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 23px;
+  }
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand h1 {
+    font-size: 23px;
+  }
+
+  .brand-eyebrow {
+    font-size: 8px;
+  }
+
+  .connection {
+    gap: 7px;
+    padding: 8px 9px;
+    font-size: 8px;
+  }
+
+  .footer {
+    gap: 10px;
+    font-size: 7px;
+  }
+}

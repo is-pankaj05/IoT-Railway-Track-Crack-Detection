@@ -1,0 +1,254 @@
+.status-panel {
+  position: relative;
+  display: flex;
+  min-height: 205px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 31px 40px;
+  border: 1px solid rgba(99, 203, 137, 0.18);
+  border-radius: 15px;
+  background:
+    linear-gradient(110deg, rgba(38, 89, 72, 0.26), rgba(23, 35, 44, 0.88) 58%),
+    var(--panel);
+}
+
+.status-panel::after {
+  position: absolute;
+  top: -90px;
+  right: 190px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(99, 203, 137, 0.09);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 35px rgba(99, 203, 137, 0.025), 0 0 0 70px rgba(99, 203, 137, 0.02);
+  pointer-events: none;
+}
+
+.status-panel--warning {
+  border-color: rgba(255, 116, 104, 0.34);
+  background:
+    linear-gradient(110deg, rgba(123, 43, 41, 0.42), rgba(30, 31, 37, 0.94) 67%),
+    var(--panel);
+}
+
+.status-panel--warning::after {
+  border-color: rgba(255, 116, 104, 0.12);
+  box-shadow: 0 0 0 35px rgba(255, 116, 104, 0.03), 0 0 0 70px rgba(255, 116, 104, 0.02);
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #9cabb0;
+  font: 10px var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.kicker-line {
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.status-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.status-symbol {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(99, 203, 137, 0.12);
+  color: var(--green);
+}
+
+.status-symbol svg {
+  width: 25px;
+  height: 25px;
+}
+
+.status-panel--warning .status-symbol {
+  background: rgba(255, 116, 104, 0.13);
+  color: var(--red);
+}
+
+.status-label,
+.status-stamp,
+.status-stamp small {
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.status-label {
+  margin: 0 0 4px;
+  color: #90a098;
+  font-size: 9px;
+}
+
+.status-heading h2 {
+  margin: 0;
+  font: 600 clamp(21px, 3vw, 29px)/1.2 var(--display);
+  letter-spacing: -0.04em;
+}
+
+.status-caption {
+  margin: 15px 0 0 60px;
+  color: #a8b4b4;
+  font-size: 13px;
+}
+
+.status-stamp {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 132px;
+  height: 132px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(99, 203, 137, 0.35);
+  border-radius: 50%;
+  color: #85d29f;
+  transform: rotate(-10deg);
+}
+
+.status-stamp > span,
+.status-stamp small {
+  font-size: 10px;
+}
+
+.status-stamp small {
+  margin-top: 8px;
+  color: #9ba9a5;
+  font-size: 8px;
+}
+
+.stamp-track {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.stamp-track i {
+  display: block;
+  width: 3px;
+  height: 15px;
+  background: currentColor;
+}
+
+.status-panel--warning .status-stamp {
+  border-color: rgba(255, 116, 104, 0.5);
+  color: var(--red);
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 14px;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 116, 104, 0.28);
+  border-radius: 9px;
+  background: rgba(123, 43, 41, 0.2);
+  color: #ffc2bb;
+}
+
+.error-icon {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: 12px var(--mono);
+}
+
+.error-banner p {
+  margin: 0;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .status-panel {
+    min-height: 190px;
+    padding: 25px;
+  }
+
+  .status-stamp {
+    width: 105px;
+    height: 105px;
+  }
+
+  .status-stamp > span {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-panel {
+    min-height: 0;
+    padding: 22px 18px;
+  }
+
+  .status-stamp {
+    width: 78px;
+    height: 78px;
+    margin-left: 8px;
+  }
+
+  .status-stamp > span {
+    font-size: 7px;
+  }
+
+  .status-stamp small {
+    margin-top: 4px;
+    font-size: 6px;
+  }
+
+  .stamp-track {
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .stamp-track i {
+    height: 9px;
+  }
+
+  .status-heading {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .status-symbol {
+    width: 36px;
+    height: 36px;
+  }
+
+  .status-symbol svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .status-heading h2 {
+    font-size: 19px;
+  }
+
+  .status-caption {
+    margin: 12px 0 0 46px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
